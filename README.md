@@ -4,7 +4,7 @@ Welcome to my professional portfolio. I am a 3rd-year B.Tech student at KL Unive
 
 ## 🚀 Tech Stack
 
-- **Frontend**: React.js, Tailwind CSS, Framer Motion
+- **Frontend**: React.js,CSS
 - **Backend**: Node.js, Express.js, REST APIs
 - **Databases**: MongoDB, SQLite, PostgreSQL
 - **AI / ML**: LangChain, LLMs, GenAI, Python
@@ -20,7 +20,7 @@ Welcome to my professional portfolio. I am a 3rd-year B.Tech student at KL Unive
 
 - **Email**: saipraneeth707524@gmail.com
 - **LinkedIn**: [saipraneeth-bachampally](https://www.linkedin.com/in/saipraneeth-bachampally/)
-- **GitHub**: [saipraneeth4004](https://github.com/saipraneeth4004)
+
 
 ---
 Built with ❤️ using React and Tailwind CSS.
