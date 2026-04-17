@@ -1,16 +1,26 @@
-# React + Vite
+# Saipraneeth Bachampally - Professional Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my professional portfolio. I am a 3rd-year B.Tech student at KL University, specializing as a **Full Stack Developer** and **Applied AI Engineer**.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Frontend**: React.js, Tailwind CSS, Framer Motion
+- **Backend**: Node.js, Express.js, REST APIs
+- **Databases**: MongoDB, SQLite, PostgreSQL
+- **AI / ML**: LangChain, LLMs, GenAI, Python
+- **Tools**: AWS, Docker, Git, CI/CD
 
-## React Compiler
+## 🛠 Key Projects
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Hire Match**: AI-powered resume analyzer using GenAI and MERN stack.
+- **Checklist Automation Agent**: Financial checklist agent using Python and Gemini Flash.
+- **Expense Tracker**: Full-stack financial management dashboard.
 
-## Expanding the ESLint configuration
+## 📫 Contact Me
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Email**: saipraneeth707524@gmail.com
+- **LinkedIn**: [saipraneeth-bachampally](https://www.linkedin.com/in/saipraneeth-bachampally/)
+- **GitHub**: [saipraneeth4004](https://github.com/saipraneeth4004)
+
+---
+Built with ❤️ using React and Tailwind CSS.

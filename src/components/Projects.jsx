@@ -77,8 +77,6 @@ const Projects = () => {
                   
                   <p className="text-gray-300 text-lg leading-relaxed mb-8">
                     {selectedProject.description}
-                    <br /><br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
                   </p>
 
                   <div className="flex gap-4">

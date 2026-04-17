@@ -1,8 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, MessageSquare, Send, Code } from "lucide-react";
+import { Mail, Github, Linkedin, MessageSquare, Send, Code, CheckCircle, AlertCircle } from "lucide-react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  
+  const [status, setStatus] = useState("idle"); // idle, loading, success, error
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    setStatus("loading");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Portfolio Message from ${formData.name}`,
+        }),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch (error) {
+      console.error("Form error:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Decorative Glows */}
@@ -37,13 +93,13 @@ const Contact = () => {
               </p>
 
               <div className="space-y-6">
-                <a href="mailto:saipraneeth@example.com" className="flex items-center gap-6 group">
+                <a href="mailto:saipraneeth707524@gmail.com" className="flex items-center gap-6 group">
                   <div className="p-4 glass-card rounded-2xl group-hover:bg-primary/20 transition-all text-primary">
                     <Mail size={24} />
                   </div>
                   <div>
                     <h4 className="text-white font-bold">Email</h4>
-                    <p className="text-gray-500">saipraneeth@example.com</p>
+                    <p className="text-gray-500">saipraneeth707524@gmail.com</p>
                   </div>
                 </a>
                 
@@ -69,36 +125,57 @@ const Contact = () => {
               viewport={{ once: true }}
               className="glass-card p-10 rounded-3xl"
             >
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="space-y-2">
                   <label className="text-gray-400 text-sm ml-1">Name</label>
                   <input
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="Enter your name"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-primary transition-all"
+                    required
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-gray-400 text-sm ml-1">Email</label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="Enter your email"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-secondary transition-all"
+                    required
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-gray-400 text-sm ml-1">Message</label>
                   <textarea
                     rows="4"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="Describe your project..."
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-accent transition-all resize-none"
+                    required
                   ></textarea>
                 </div>
                 
                 <button
-                  className="w-full py-4 bg-gradient-to-r from-primary to-secondary rounded-xl text-white font-bold text-lg flex items-center justify-center gap-3 hover:shadow-[0_0_20px_rgba(112,0,255,0.4)] transition-all"
+                  type="submit"
+                  disabled={status === "loading"}
+                  className={`w-full py-4 rounded-xl text-white font-bold text-lg flex items-center justify-center gap-3 transition-all ${
+                    status === "loading" ? "opacity-70 cursor-not-allowed" : "hover:shadow-[0_0_20px_rgba(112,0,255,0.4)]"
+                  } ${
+                    status === "success" ? "bg-green-500" : status === "error" ? "bg-red-500" : "bg-gradient-to-r from-primary to-secondary"
+                  }`}
                 >
-                  Send Message <Send size={20} />
+                  {status === "idle" && <><Send size={20} /> Send Message</>}
+                  {status === "loading" && <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>}
+                  {status === "success" && <><CheckCircle size={20} /> Message Sent!</>}
+                  {status === "error" && <><AlertCircle size={20} /> Error Occurred</>}
                 </button>
               </form>
             </motion.div>
