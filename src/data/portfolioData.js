@@ -53,7 +53,7 @@ export const projectsData = [
     id: 1,
     title: "Hire Match",
     description: "An AI-powered resume analyzer built with Node.js, React, and MongoDB to process candidates' resumes and provide insights and matching scores.",
-    tech: ["Node.js", "React", "MongoDB"],
+    tech: ["Node.js", "React", "MongoDB", "Gen AI"],
     image: hireMatchImg,
     github: "https://github.com/saipraneeth4004/Hire-Match",
     live: "#",
