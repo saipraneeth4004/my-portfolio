@@ -52,8 +52,8 @@ export const projectsData = [
   {
     id: 1,
     title: "Hire Match",
-    description: "An AI-powered resume analyzer that uses Gemini AI and the MERN stack to process candidates' resumes and provide insights and matching scores.",
-    tech: ["Gen AI", "MERN Stack", "Gemini AI", "React"],
+    description: "An AI-powered resume analyzer built with Node.js, React, and MongoDB using Gemini AI to process candidates' resumes and provide insights and matching scores.",
+    tech: ["Node.js", "React", "MongoDB", "Gemini AI", "Gen AI"],
     image: hireMatchImg,
     github: "https://github.com/saipraneeth4004/Hire-Match",
     live: "#",

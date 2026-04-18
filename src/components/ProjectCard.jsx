@@ -1,12 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 
 const ProjectCard = ({ project, onClick }) => {
   return (
     <motion.div
       layoutId={`project-${project.id}`}
-      whileHover={{ y: -10 }}
+      initial="initial"
+      whileHover="hover"
       className="group relative cursor-pointer"
       onClick={() => onClick(project)}
     >
@@ -17,11 +18,21 @@ const ProjectCard = ({ project, onClick }) => {
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         
-        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-          <div className="flex gap-4 mb-4">
-             {project.tech.slice(0, 3).map(t => (
-               <span key={t} className="text-xs px-2 py-1 bg-primary/20 border border-primary/30 rounded-md text-white font-medium">
+          <motion.div
+            variants={{
+              initial: { opacity: 0, x: -10, y: 10 },
+              hover: { opacity: 1, x: 0, y: 0 }
+            }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-6 right-6 p-2 bg-primary rounded-full shadow-lg shadow-primary/40"
+          >
+            <ArrowUpRight size={20} className="text-white" />
+          </motion.div>
+          
+          <div className="flex flex-wrap gap-2 mb-4">
+             {project.tech.slice(0, 5).map(t => (
+               <span key={t} className="text-[10px] px-2 py-1 bg-primary/20 border border-primary/30 rounded-md text-white font-medium uppercase tracking-wider">
                  {t}
                </span>
              ))}
