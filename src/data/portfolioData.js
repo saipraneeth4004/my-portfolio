@@ -1,6 +1,6 @@
 import awsCert from "../assets/aws-cert.png";
-import leetcodeImg from "../assets/leetcode.png";
 import mongodbCert from "../assets/mongodb-cert.png";
+import hireMatchImg from "../assets/hire-match.png";
 
 export const headerData = {
   name: "SAIPRANEETH BACHAMPALLY",
@@ -18,12 +18,12 @@ export const navLinks = [
 ];
 
 export const skillsData = [
-  { category: "Programming", skills: ["C", "Java", "Python", "JavaScript", "C++", "Data Structures & Algorithms"] },
-  { category: "Frontend", skills: ["React.js", "HTML", "CSS", "Bootstrap", "Tailwind CSS", "Framer Motion"] },
-  { category: "Backend", skills: ["Node.js", "Express.js", "REST APIs"] },
-  { category: "Databases", skills: ["MongoDB", "SQLite", "PostgreSQL"] },
-  { category: "AI / ML", skills: ["LangChain", "LLMs", "Prompt Engineering", "Generative AI", "Gemini Flash"] },
-  { category: "Tools & Other", skills: ["Git", "GitHub", "Linux", "Docker", "CI/CD", "Agile"] },
+  { category: "Languages", skills: ["C", "Java", "Python", "JavaScript"] },
+  { category: "Frontend", skills: ["HTML", "CSS", "Bootstrap", "React.js"] },
+  { category: "Backend", skills: ["Node.js", "Express.js"] },
+  { category: "Databases", skills: ["MongoDB", "SQLite"] },
+  { category: "AI / ML", skills: ["LangChain", "Large Language Models (LLMs)", "Prompt Engineering", "Generative AI", "Automation Systems"] },
+  { category: "Tools & Other", skills: ["Git", "GitHub", "Linux", "Docker", "CI/CD", "REST APIs", "Agile", "Communication", "Leadership"] },
 ];
 
 export const experienceData = [
@@ -52,9 +52,9 @@ export const projectsData = [
   {
     id: 1,
     title: "Hire Match",
-    description: "An AI-powered resume analyzer that uses Gen AI and the MERN stack to process candidates' resumes and provide insights and matching scores.",
-    tech: ["Gen AI", "MERN Stack", "OpenAI", "React"],
-    image: "https://images.unsplash.com/photo-1586281380349-631531a3d245?q=80&w=2070&auto=format&fit=crop",
+    description: "An AI-powered resume analyzer that uses Gemini AI and the MERN stack to process candidates' resumes and provide insights and matching scores.",
+    tech: ["Gen AI", "MERN Stack", "Gemini AI", "React"],
+    image: hireMatchImg,
     github: "https://github.com/saipraneeth4004/Hire-Match",
     live: "#",
   },
@@ -81,20 +81,13 @@ export const projectsData = [
 export const achievementsData = [
   {
     id: 1,
-    title: "200+ LeetCode Submissions",
-    description: "Consistent coding practice on LeetCode with 200+ high-quality submissions and 150+ active days, mastering algorithms and patterns.",
-    image: leetcodeImg,
-    link: "https://leetcode.com/u/saipraneeth31549/",
-  },
-  {
-    id: 2,
     title: "AWS Certified Cloud Practitioner",
     description: "Validation of overall understanding of the AWS Cloud platform, covering basic cloud concepts and security.",
     image: awsCert,
     link: "https://cp.certmetrics.com/amazon/en/public/verify/credential/524c5aee04064bde9b41ba9340ceb0a1",
   },
   {
-    id: 3,
+    id: 2,
     title: "MongoDB Associate Developer",
     description: "Certified MongoDB Associate Developer, demonstrating proficiency in data modeling, querying, and database administration.",
     image: mongodbCert,

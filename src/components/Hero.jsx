@@ -65,10 +65,21 @@ const Hero = () => {
             </motion.a>
             
             <motion.a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-secondary/20 border-2 border-secondary rounded-full font-bold text-lg flex items-center gap-2 transition-all hover:bg-secondary/30 hover:shadow-[0_0_20px_rgba(255,0,217,0.4)]"
+            >
+              Download CV
+            </motion.a>
+
+            <motion.a
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-transparent border-2 border-secondary rounded-full font-bold text-lg hover:bg-secondary/10 transition-all hover:shadow-[0_0_20px_rgba(255,0,217,0.4)]"
+              className="px-8 py-4 bg-transparent border-2 border-gray-600 rounded-full font-bold text-lg hover:bg-white/5 transition-all"
             >
               Contact Me
             </motion.a>

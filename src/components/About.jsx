@@ -48,12 +48,12 @@ const About = () => {
               </p>
               <p>
                 My focus is on solving complex real-world problems and building intelligent systems. 
-                With experience in leadership and tech club projects, I strive for excellence in 
-                every codebase I contribute to.
+                With experience in leadership, tech club projects, and <span className="text-accent">active participation in 10+ hackathons</span>, 
+                I strive for excellence in every codebase I contribute to.
               </p>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="mt-12 grid grid-cols-2 lg:grid-cols-3 gap-8">
               <div>
                 <h4 className="text-white font-bold text-2xl">5</h4>
                 <p className="text-gray-500">Major Projects</p>
@@ -61,6 +61,10 @@ const About = () => {
               <div>
                 <h4 className="text-white font-bold text-2xl">50+</h4>
                 <p className="text-gray-500">Mini Projects</p>
+              </div>
+              <div>
+                <h4 className="text-white font-bold text-2xl">10+</h4>
+                <p className="text-gray-500">Hackathons</p>
               </div>
             </div>
           </div>
